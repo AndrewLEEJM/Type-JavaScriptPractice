@@ -1,4 +1,4 @@
-test("1 is 1", () => {
+/* test("1 is 1", () => {
   expect(1).toBe(1);
 });
 
@@ -26,4 +26,11 @@ test("array", () => {
   expect(colors).toHaveLength(3);
   expect(colors).toContain("Yellow");
   expect(colors).not.toContain("Green");
+}); */
+
+const fn = require("./hi");
+test("4초 후에 나이 25", () => {
+  return fn.fourSecondAge().then((num) => {
+    expect(num).toBe(25);
+  });
 });
