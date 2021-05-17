@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body class="body">
+  <div id="cols">
+    <button class="btn">A</button>
+    <button class="btn">B</button>
+    <button class="btn">C</button>
+  </div>
+</body>
+<script>
+  window.addEventListener('blur', () => {
+    console.log('xx')
+  })
+
+  var cols = document.querySelectorAll("#cols .btn");
+
+  for (var i = 0; i < cols.length; i++) {
+    cols[i].addEventListener("click", click);
+  }
+  cols[1].style.color = "green";
+
+  function click(e) {
+    window.alert(this.innerHTML);
+  }
+</script>
+
+</html>
