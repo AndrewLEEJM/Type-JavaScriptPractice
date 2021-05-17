@@ -29,8 +29,8 @@ test("array", () => {
 }); */
 
 const fn = require("./hi");
-test("4초 후에 나이 25", () => {
-  return fn.fourSecondAge().then((num) => {
-    expect(num).toBe(25);
+test("팝업리스트", () => {
+  return fn.getPopupList().then((code) => {
+    expect(code).toBe(2000);
   });
 });
