@@ -1,3 +1,4 @@
+"use strict";
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
@@ -78,4 +79,28 @@ var Name = /** @class */ (function () {
     }
     return Name;
 }());
-console.log(new Name("Jin").name); // 오류: 'name'은 비공개로 선언되어 있습니다;
+//console.log(new Name("Jin").name); // 오류: 'name'은 비공개로 선언되어 있습니다;
+var fullNameMaxLength = 10;
+var Employee = /** @class */ (function () {
+    function Employee() {
+    }
+    Object.defineProperty(Employee.prototype, "fullName", {
+        get: function () {
+            return this._fullName;
+        },
+        set: function (newName) {
+            if (newName && newName.length > fullNameMaxLength) {
+                throw new Error("fullName has a max length of " + fullNameMaxLength);
+            }
+            this._fullName = newName;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    return Employee;
+}());
+var employee = new Employee();
+employee.fullName = "Bob Smith";
+if (employee.fullName) {
+    console.log(employee.fullName);
+}

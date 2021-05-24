@@ -19,7 +19,7 @@ console.log(user.id, user.name);
 class Student {
   fullName: string;
   constructor(public firstName: string, public middleInitial: string, public lastName: string) {
-      this.fullName = firstName + " " + middleInitial + " " + lastName;
+    this.fullName = firstName + " " + middleInitial + " " + lastName;
   }
 }
 
@@ -40,23 +40,23 @@ class Animal {
   name: string;
   constructor(theName: string) { this.name = theName; }
   move(distanceInMeters: number = 0) {
-      console.log(`${this.name} moved ${distanceInMeters}m.`);
+    console.log(`${this.name} moved ${distanceInMeters}m.`);
   }
 }
 
 class Snake extends Animal {
   constructor(name: string) { super(name); }
   move(distanceInMeters = 5) {
-      console.log("Slithering...");
-      super.move(distanceInMeters);
+    console.log("Slithering...");
+    super.move(distanceInMeters);
   }
 }
 
 class Horse extends Animal {
   constructor(name: string) { super(name); }
   move(distanceInMeters = 45) {
-      console.log("Galloping...");
-      super.move(distanceInMeters);
+    console.log("Galloping...");
+    super.move(distanceInMeters);
   }
 }
 
@@ -72,28 +72,28 @@ class Name {
   constructor(theName: string) { this.name = theName; }
 }
 
-console.log(new Name("Jin").name); // 오류: 'name'은 비공개로 선언되어 있습니다;
+//console.log(new Name("Jin").name); // 오류: 'name'은 비공개로 선언되어 있습니다;
 
 const fullNameMaxLength = 10;
 
 class Employee {
-    private _fullName!: string;
+  private _fullName!: string;
 
-    get fullName(): string {
-        return this._fullName;
+  get fullName(): string {
+    return this._fullName;
+  }
+
+  set fullName(newName: string) {
+    if (newName && newName.length > fullNameMaxLength) {
+      throw new Error("fullName has a max length of " + fullNameMaxLength);
     }
 
-    set fullName(newName: string) {
-        if (newName && newName.length > fullNameMaxLength) {
-            throw new Error("fullName has a max length of " + fullNameMaxLength);
-        }
-
-        this._fullName = newName;
-    }
+    this._fullName = newName;
+  }
 }
 
 let employee = new Employee();
 employee.fullName = "Bob Smith";
 if (employee.fullName) {
-    console.log(employee.fullName);
+  console.log(employee.fullName);
 }
