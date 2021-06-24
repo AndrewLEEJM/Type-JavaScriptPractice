@@ -4,7 +4,7 @@ body {
 .header {
   height: 60px;
   width: 100%;
-  background-color: rgb(20, 6, 99);
+  background-color: rgb(14, 4, 75);
 }
 .header__title {
   color: white;
@@ -15,4 +15,32 @@ body {
 }
 .header__title > h1 {
   align-self: center;
+}
+.container {
+  max-width: 1250px;
+  margin: 60px auto;
+}
+.container__box {
+  display: flex;
+  flex-wrap: wrap;
+}
+.container__box_item {
+  margin: 1%;
+  width: 23%;
+  height: 200px;
+  background-color: antiquewhite;
+  box-shadow: 5px 5px 5px #9b9b9b;
+}
+.container__box_item_title {
+  position: relative;
+  top: 110%;
+  text-align: center;
+}
+.container__box_item_title > p {
+  font-size: 17px;
+  font-weight: bold;
+}
+.container__box_item.soon {
+  background-image: url("./soon.jpg");
+  background-size: contain;
 }
